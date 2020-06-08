@@ -23,6 +23,18 @@ class ShowPhotoViewController: UIViewController {
     }
     
     @IBAction func SharePhotoAction(_ sender: Any) {
+        let shareAction = UIActivityViewController(activityItems: [image!], applicationActivities: nil)
+        
+        shareAction.completionWithItemsHandler = { _, bool, _, _ in
+            if bool {
+                print("sucseed")
+            }
+            
+        }
+        
+        present(shareAction, animated: true, completion: nil)
+        
+        
     }
 
     /*
